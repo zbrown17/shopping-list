@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="shopping">
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<style>
+    body {
+        background-image: url("http://designoval.com/wp-content/uploads/2015/04/Cool_backgrounds_hd-6.jpg");
+        color: white;
+        font-size: 16px;
+    }
+    input, button {
+        color: black;
+    }
+</style>    
+    
+</head>
+    <body ng-controller="ShopCtrl">
+<div class="container">  
+    <br>
+    <div class="row col-xs-12">
+        <input ng-model="newitem"> <button ng-click="additem()" class="btn">Add Item</button><hr>
+    </div>
+        
+<div class="row col-xs-12">
+    <ul>
+        <li ng-repeat="item in shoppinglist track by $index">{{item}} &nbsp; <button ng-click="removeitem($index)" class="btn btn-danger">X</button> </li>
+    </ul>
+</div>
+ </div> 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="shopping.js"></script>    
+    </body>
+
+</html>
